@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Semana 3 - Lista de alumnos</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Datos que simulan lo que vendría de una API (referencia a index1)
+        const datosAlumnos = {
+            "status": 200,
+            "message": "Alumnos obtenidos correctamente",
+            "data": [
+                { "id": 1, "nombre": "Claudio", "carrera": "Ing. Civil Informatica", "promedio": 5.8 },
+                { "id": 2, "nombre": "Benjamin", "carrera": "Ing. Civil Informatica", "promedio": 6.1 },
+                { "id": 3, "nombre": "Fabian", "carrera": "Ing. Civil Informatica", "promedio": 5.4 },
+                { "id": 4, "nombre": "Leonardo", "carrera": "Ing. Civil Informatica", "promedio": 6.3 }
+            ]
+        };
+
+        function cargarTablaAlumnos(){
+            let cuerpo = document.getElementById("cuerpoTablaAlumnos");
+            
+            // Limpiamos la tabla por si el usuario presiona el botón más de una vez
+            cuerpo.innerHTML = "";
+
+            // Recorremos los datos (similar al forEach de index1)
+            datosAlumnos.data.forEach((alumno) => {
+                let fila = document.createElement("tr");
+
+                let celdaId = document.createElement("td");
+                celdaId.innerText = alumno.id;
+
+                let celdaNombre = document.createElement("td");
+                celdaNombre.innerText = alumno.nombre;
+
+                let celdaCarrera = document.createElement("td");
+                celdaCarrera.innerText = alumno.carrera;
+
+                let celdaPromedio = document.createElement("td");
+                celdaPromedio.innerText = alumno.promedio;
+
+                if (alumno.promedio < 4.0){
+                    celdaPromedio.style.color = "red";
+                }
+
+                fila.appendChild(celdaId);
+                fila.appendChild(celdaNombre);
+                fila.appendChild(celdaCarrera);
+                fila.appendChild(celdaPromedio);
+
+                cuerpo.appendChild(fila);
+            });
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-dark mb-4">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">Universidad Andrés Bello</span>
+            <span class="navbar-text text-light">
+                Desarrollo Web y Móvil
+            </span>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <h2>Listado de alumnos</h2>
+        
+        <button type="button" class="btn btn-primary mb-3" onclick="cargarTablaAlumnos();">Cargar Alumnos</button>
+        
+        <table class="table table-striped table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Carrera</th>
+                    <th>Promedio</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpoTablaAlumnos">
+                <!-- Los datos aparecerán aquí tras hacer clic -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
