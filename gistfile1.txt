@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+<div class="container-fluid">
+  
+  <div class="row">
+    <div class="col-12 p-3 bg-dark text-white">Ejemplo</div>
+  </div>
+
+  <div class="row p-2 my-5 text-center">
+    <div class="col-12">
+      <h1 class="display-4">ejemplo responsive</h1>
+      <p class="lead">Inserte texto xd</p>
+    </div>
+  </div>
+
+  <div class="row justify-content-center my-5">
+    <div class="col-12 col-md-10 col-lg-8">
+      <div class="p-5 bg-primary text-white rounded shadow">
+        <h1>Ejemplo</h1>
+        <p>texto en bloque</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-md-6 bg-success p-3 text-white">superior izquerda</div>
+    <div class="col-12 col-md-6 bg-info p-3 text-dark">superior derecha</div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-md-3 bg-primary p-3 text-white text-start">Esquina</div>
+    <div class="col-12 col-md-6 bg-warning p-3 text-dark text-center">Centro</div>
+    <div class="col-12 col-md-3 bg-danger p-3 text-white text-end">Esquina</div>
+  </div>
+
+  <div class="row bg-secondary text-center p-3">
+    <div class="col-12 col-md"><div>a</div></div>
+    <div class="col-12 col-md"><div>a</div></div>
+    <div class="col-12 col-md"><div>a</div></div>
+  </div>
+
+</div>
+
+</body>
+</html>
